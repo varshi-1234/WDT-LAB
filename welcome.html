@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Welcome </title>
+<style>
+#footer { 
+Position: fixed;
+padding: 10px 10px 0px 10px; 
+bottom: 0;
+width: 100%; 
+height: 40px;
+}
+</style>
+</head>
+<body>
+<br/>
+<?php
+$stime=$_SESSION['stime'];
+echo <p align='right'> 
+ "<h2>Goodbye: B.Varshitha
+ "<br/><h2>Login time: 03:18:54 PM
+ "<br/><h2>logout time: 03:19:16 PM
+<?php
+if(isset($_POST['logout']))
+{
+
+$uname=$_POST["uname"]; date_default_timezone_set('Asia/Kolkata');
+$currentTime = date( 'h:i:s A', time () ); session_start();
+$_SESSION["stime"] = $_SESSION['stime'];
+$_SESSION["etime"] = $currentTime; header('Location: Welcome.php');
+}
+?>
+<div id = "footer">
+<p align = "center"> &copy; 
+B.Varshitha-- all rights -reserved </p>
+</div>
+</html>
